@@ -114,23 +114,27 @@ console.log("결과:", sum(3, 6));
 // document.write(sum);
 
 //1.
-const hi = function (user) {
-  document.write(user + "님 안녕하세요!<br>");
-};
-hi("hello");
+// const hi = function (user) {
+//   document.write(user + "님 안녕하세요!<br>");
+// };
+// hi("hello");
 //2.
-const hi1 = (user, user1) => {
-  document.write(user + "님 안녕하세요! 1 <br>");
-  document.write(user1 + "님도 안녕하세요! <br>");
-};
-hi1("hello", "world");
+// const hi1 = (user, user1) => {
+//   document.write(user + "님 안녕하세요! 1 <br>");
+//   document.write(user1 + "님도 안녕하세요! <br>");
+// };
+// hi1("hello", "world");
 //3.
 // const hi2 = () => alert("안녕하세요 hi2");
 // hi2();
+// document.querySelector("#change").onclick = function () {
+//   document.querySelector("p").style.color = "#f00";
+//   document.querySelector("#change").style.color = "blue";
+// };
 
-let changeBtn = document.querySelector("#change");
-changeBtn.onclick = changeColor;
-function changeColor() {
-  document.querySelector("p").style.color = "#f00";
-  document.querySelector("#change").style.color = "blue";
-}
+// let changeBtn = document.querySelector("#change");
+// changeBtn.onclick = changeColor;
+// function changeColor() {
+//   document.querySelector("p").style.color = "#f00";
+//   document.querySelector("#change").style.color = "blue";
+// }
