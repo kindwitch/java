@@ -127,13 +127,14 @@ console.log("결과:", sum(3, 6));
 //3.
 // const hi2 = () => alert("안녕하세요 hi2");
 // hi2();
+
 // document.querySelector("#change").onclick = function () {
 //   document.querySelector("p").style.color = "#f00";
 //   document.querySelector("#change").style.color = "blue";
 // };
 
-// let changeBtn = document.querySelector("#change");
 // changeBtn.onclick = changeColor;
+// let changeBtn = document.querySelector("#change");
 // function changeColor() {
 //   document.querySelector("p").style.color = "#f00";
 //   document.querySelector("#change").style.color = "blue";
