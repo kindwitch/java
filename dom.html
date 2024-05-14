@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="innertext()">innerText로 표시하기</button>
+    <button onclick="innerhtml()">innerHTML로 표시하기</button>
+
+    <h1>현재 시각:</h1>
+    <div id="current"></div>
+    <div id="current"></div>
+    <br />
+    <span id="result"></span>
+    <div id="proc-pic">
+      <img
+        src="img/area.jpg"
+        alt="구글 이미지"
+        id="google"
+        width="200"
+        height="200"
+        onmouseover="changeSrc()"
+        onmouseout="resetSrc()"
+      />
+    </div>
+    <div id="rect"></div>
+    <div id="container">
+      <h1>DOM을 공부합시다</h1>
+      <a href="#" onclick="addP(); this.onclick'';">더보기</a>
+      <div id="info"></div>
+    </div>
+    <script>
+      function addP() {
+        let newP = document.createElement("p");
+        let txtNode = document.createTextNode("Dom이란???");
+        newP.appendChild(txtNode);
+        document.getElementById("info").appendChild("newP");
+      }
+    </script>
+    <script>
+      let myRect = document.querySelector("#rect");
+      myRect.addEventListener("mouseover", function () {
+        myRect.style.backgroundColor = "green";
+        myRect.style.borderRadius = "10%";
+      });
+    </script>
+    <script>
+      let google = document.querySelector("#google");
+      google.ondblclick = function () {
+        document.querySelector("#result").innerText = "이미지 더블클릭";
+      };
+      //google.onclick = displaySrc;
+      google.onmousemove = function (event) {
+        document.querySelector("#result").innerText =
+          event.clientX + "," + event.screenY;
+      };
+      // google.onmouseover = changeSrc;
+      google.onmouseout = resetSrc;
+      google.addEventListener("click", displaySrc);
+      google.addEventListener("moseover", changeSrc);
+      google.addEventListener("mouseout", resetSrc);
+
+      function changeSrc() {
+        document.querySelector("#google").setAttribute("src", "img/ask.png");
+      }
+
+      function displaySrc() {
+        let google = document.querySelector("#google");
+        document.querySelector("#result").innerText =
+          google.getAttribute("src");
+      }
+
+      function resetSrc() {
+        document.querySelector("#google").setAttribute("src", "img/area.jpg");
+      }
+    </script>
+    <script>
+      let now = new Date();
+
+      function innertext() {
+        document.getElementById("current").innerText = now;
+        document.querySelector("span").innerText = now;
+      }
+
+      function innerhtml() {
+        //  document.getElementById("current").innerHTML = "<h1>" + now + "</h1>";
+        document.querySelector("span").innerHTML = "<h1>" + now + "</h1>";
+        document.getElementsByTagName("span").innerHTML =
+          "<h1>" + now + "</h1>";
+      }
+    </script>
+    <script src="dom.js"></script>
+  </body>
+</html>
